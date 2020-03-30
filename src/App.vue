@@ -3,7 +3,9 @@
     <!-- <img alt="Vue logo" src="../src/assets/images/logo@2x.png"> -->
     <m-header />
     <nav-tab  />
-    <router-view></router-view>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 

@@ -16,5 +16,16 @@ module.exports = {
       .set('store', resolve('src/store'))
       .set('utils', resolve('src/utils'))
       .set('api', resolve('src/api'))
+  },
+  devServer: {
+    proxy: {
+      '/api/getMusicInfo': {
+        target: 'https://u.y.qq.com/cgi-bin/musics.fcg',
+        changeOrigin: true,
+        pathRewrite : {
+          '^/api/getMusicInfo' : ''
+        }
+      }
+    }
   }
 }
